@@ -64,7 +64,7 @@ $tasks = mysqli_fetch_all($result, MYSQLI_ASSOC);
                                 </div>    
                             </div>
                             <div>
-                                <h3>Lista de Tarefas</h3>
+                                <h3>Lista de Tarefas:</h3>
                                     <ul>
                                         <?php foreach ($tasks as $task): ?>
                                             <li>
@@ -83,16 +83,6 @@ $tasks = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 </div>
             </div>
 
-    
-
-    <!-- <h3>Adicionar Tarefa</h3>
-    <form method="post">
-        Título: <input type="text" name="title" required><br>
-        Descrição: <textarea name="description" required></textarea><br>
-        <input type="submit" name="new_task" value="Adicionar Tarefa">
-    </form> -->
-
-    <!-- Lista de tarefas -->
     <h3>Lista de Tarefas</h3>
     <ul>
         <?php foreach ($tasks as $task): ?>

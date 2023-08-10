@@ -13,7 +13,7 @@ $user_id = $_SESSION["user_id"];
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["new_task"])) {
     $title = $_POST["title"];
     $description = $_POST["description"];
-    $status = "pendente"; // Pode ser "concluída" também
+    $status = "pendente";
 
     $sql = "INSERT INTO tasks (title, description, creation_date, status, user_id) VALUES ('$title', '$description', NOW(), '$status', $user_id)";
     mysqli_query($conn, $sql);
@@ -83,7 +83,6 @@ $tasks = mysqli_fetch_all($result, MYSQLI_ASSOC);
         </div>
     <div>
 
-    <!-- Lista de tarefas -->
     <h3>Lista de Tarefas</h3>
     <ul>
         <?php foreach ($tasks as $task): ?>
@@ -99,7 +98,6 @@ $tasks = mysqli_fetch_all($result, MYSQLI_ASSOC);
         <?php endforeach; ?>
     </ul>
 
-    <!-- Formulário para editar tarefa -->
     <div id="editTaskForm" style="display:none;">
         <h3>Editar Tarefa</h3>
         <form method="post">
